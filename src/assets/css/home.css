@@ -1,0 +1,157 @@
+.home-page {
+  padding: 0 100px;
+}
+img {
+  max-width: 100%;
+}
+.section {
+  margin: 70px 0;
+}
+
+.hero-content {
+  display: flex;
+  gap: 100px;
+}
+.hero-section .mobile-hero-img {
+  display: none;
+}
+.hero-content .left-hero-content h1 {
+  font-weight: 500;
+  font-size: 60px;
+}
+.hero-content .left-hero-content > * {
+  margin-bottom: 35px;
+}
+
+.hero-section .company-logos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hero-section .company-logos img {
+  max-width: 125px;
+  width: 100%;
+}
+
+.section .section-intro {
+  display: flex;
+  margin-bottom: 80px;
+  border-radius: 7px;
+}
+
+.section .section-intro .title {
+  font-size: 40px;
+  margin-right: 40px;
+  padding: 0 7px;
+  background-color: var(--green);
+}
+.section .section-intro .description {
+  max-width: 580px;
+  font-size: 18px;
+}
+
+.services .services-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.services .services-cards .service-card {
+  border-radius: 45px;
+  padding: 50px;
+  border: 1px solid var(--dark);
+  box-shadow: 0px 5px var(--dark);
+  height: 310px;
+  display: flex;
+}
+
+.service-card .service-card-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.service-card .service-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services .services-cards .service-card img {
+  max-width: 210px;
+  width: 100%;
+  object-fit: contain;
+}
+.services .services-cards .title {
+  font-size: 30px;
+  font-weight: 500;
+  width: fit-content;
+  border-radius: 7px;
+  padding: 0 7px;
+}
+
+.services .services-cards .card-1 {
+  background-color: var(--light-gray);
+}
+
+.services .services-cards .card-2 {
+  background-color: var(--green);
+}
+
+.services .services-cards .card-3 {
+  background-color: var(--dark);
+}
+
+.services .services-cards .card-1 .title {
+  background-color: var(--green);
+}
+.services .services-cards .card-2 .title {
+  background-color: var(--white);
+}
+.services .services-cards .card-3 .title {
+  background-color: var(--white);
+}
+.services .services-cards .card-3 .service-card-footer {
+  color: var(--white);
+}
+
+@media (max-width: 1440px) {
+  .home-page {
+    padding: 0 50px;
+  }
+
+  .hero-content {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content .left-hero-content h1 {
+    font-size: 43px;
+  }
+  .hero-content .left-hero-content h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-content {
+    display: block;
+  }
+  .section {
+    margin: 30px 0;
+  }
+  .hero-section .hero-img {
+    display: none;
+  }
+  .hero-section .mobile-hero-img {
+    display: block;
+  }
+  .hero-content .left-hero-content > * {
+    margin-bottom: 20px;
+  }
+  .book-a-consultation {
+    margin-top: 20px;
+  }
+}
