@@ -9,8 +9,22 @@ import SeachEngineOptimizationImage from "../../assets/images/services/search-en
 import PayPerClickImage from "../../assets/images/services/pay-per-click-advertising.png";
 import SocialMediaMarketingImage from "../../assets/images/services/social-media-marketing.png";
 import EmailMarketingImage from "../../assets/images/services/email-marketing.png";
+import LearnMoreIcon from "../../assets/svg/learn-more-icon.svg";
+import { useSearchParams } from "react-router-dom";
 
 export const HomePage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log("searchParam", searchParams.get("page"), searchParams.toString());
+
+  setTimeout(() => {
+    console.log("setting page 2");
+    searchParams.set("page", "2");
+    searchParams.delete("view");
+
+    // setSearchParams({ view: "da" });
+  }, 3000);
+
+  const handlButtonClick = () => {};
   const servicesCards = [
     {
       title: "Search engine",
@@ -50,7 +64,10 @@ export const HomePage = () => {
               online through a range of services including SEO, PPC, social
               media marketing, and content creation.
             </h4>
-            <button className="primary-btn book-a-consultation">
+            <button
+              className="primary-btn book-a-consultation"
+              onClick={handlButtonClick}
+            >
               Book a consultation
             </button>
           </div>
@@ -88,7 +105,17 @@ export const HomePage = () => {
                       <h4 className="title">{service.subtitle}</h4>
                     </div>
                     <div className="service-card-footer">
-                      <p>Learn more</p>
+                      <img
+                        src={LearnMoreIcon}
+                        alt="learn-more-icon"
+                        className="learn-more-icon"
+                      />
+                      <p className="learn-more-text">Learn more</p>
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="service-card-image service-card-image-mobile"
+                      />
                     </div>
                   </div>
                   <img
@@ -100,6 +127,78 @@ export const HomePage = () => {
               </div>
             );
           })}
+        </div>
+        <div className="free-proposal">
+          <div className="free-proposal-content">
+            <h3 className="free-proposal-title">Let's make things happen</h3>
+            <p className="free-proposal-description">
+              Contact us today to learn more about how our digital marketing
+              services can help your business grow and succeed online.
+            </p>
+            <button className="primary-btn free-proposal-btn">
+              Get your proposal
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="section case-studies">
+        <div className="section-intro">
+          <h2 className="title">Case Studies</h2>
+          <p className="description">
+            Explore Real-Life Examples of Our Proven Digital Marketing Success
+            through Our Case Studies
+          </p>
+        </div>
+        <div className="case-studies-content">
+          <div className="case-studies-cards">
+            <div className="case-studies-card">
+              <p className="case-studies-card-description">
+                For a local restaurant, we implemented a targeted PPC campaign
+                that resulted in a 50% increase in website traffic and a 25%
+                increase in sales.
+              </p>
+              <div className="case-studies-card-footer">
+                <p>Learn More</p>
+                <img
+                  src={LearnMoreIcon}
+                  alt="learn-more-icon"
+                  className="learn-more-icon"
+                />
+              </div>
+            </div>
+            <div className="divider"></div>
+            <div className="case-studies-card">
+              <p className="case-studies-card-description">
+                For a local restaurant, we implemented a targeted PPC campaign
+                that resulted in a 50% increase in website traffic and a 25%
+                increase in sales.
+              </p>
+              <div className="case-studies-card-footer">
+                <p>Learn More</p>
+                <img
+                  src={LearnMoreIcon}
+                  alt="learn-more-icon"
+                  className="learn-more-icon"
+                />
+              </div>
+            </div>
+            <div className="divider"></div>
+            <div className="case-studies-card">
+              <p className="case-studies-card-description">
+                For a local restaurant, we implemented a targeted PPC campaign
+                that resulted in a 50% increase in website traffic and a 25%
+                increase in sales.
+              </p>
+              <div className="case-studies-card-footer">
+                <p>Learn More</p>
+                <img
+                  src={LearnMoreIcon}
+                  alt="learn-more-icon"
+                  className="learn-more-icon"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
