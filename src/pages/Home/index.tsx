@@ -10,6 +10,8 @@ import PayPerClickImage from "../../assets/images/services/pay-per-click-adverti
 import SocialMediaMarketingImage from "../../assets/images/services/social-media-marketing.png";
 import EmailMarketingImage from "../../assets/images/services/email-marketing.png";
 import LearnMoreIcon from "../../assets/svg/learn-more-icon.svg";
+import ContactUsImage from "../../assets/images/contact-us-bg.png";
+
 import { useSearchParams } from "react-router-dom";
 
 export const HomePage = () => {
@@ -197,6 +199,50 @@ export const HomePage = () => {
                   className="learn-more-icon"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section contact-us">
+        <div className="section-intro">
+          <h2 className="title">Contact Us</h2>
+          <p className="description">
+            Connect with Us: Let's Discuss Your Digital Marketing Needs
+          </p>
+        </div>
+        <div>
+          <div className="contact-us-content">
+            <form className="contact-us-form">
+              <div className="radio-buttons">
+                <label>
+                  <input type="radio" name="contact-type" value="hi" />
+                  Say Hi
+                </label>
+                <label>
+                  <input type="radio" name="contact-type" value="quote" />
+                  Get a Quote
+                </label>
+              </div>
+              <div className="input-fields">
+                <div>
+                  <label>Name</label>
+                  <input type="text" placeholder="Name" />
+                </div>
+                <div>
+                  <label>Email *</label>
+                  <input type="email" required placeholder="Email" />
+                </div>
+                <div>
+                  <label>Message *</label>
+                  <input type="textarea" required placeholder="Message" />
+                </div>
+              </div>
+              <button type="submit" className="primary-btn">
+                Send Message
+              </button>
+            </form>
+            <div className="contact-us-img">
+              <img src={ContactUsImage} alt="bg-image" />
             </div>
           </div>
         </div>
