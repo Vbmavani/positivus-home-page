@@ -425,6 +425,8 @@ img {
   }
 }
 
+
+
 @media (max-width: 768px) {
   .section .section-intro .title {
     margin-right: unset;

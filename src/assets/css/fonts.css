@@ -1,34 +1,72 @@
+
 @font-face {
-  font-family: "space-grotesk";
+  font-family: "space700";
+  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "space600";
+  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "space500";
+  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "space400";
+  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "space300";
   src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Light.ttf);
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: "space-grotesk";
-  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
-  font-weight: 400;
-  font-style: normal;
+
+
+.space300 {
+  font-family: var(--int-light) !important;
 }
 
-@font-face {
-  font-family: "space-grotesk";
-  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf);
-  font-weight: 500;
-  font-style: normal;
+.space400 {
+  font-family: var(--int-regular) !important;
 }
 
-@font-face {
-  font-family: "space-grotesk";
-  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf);
-  font-weight: 600;
-  font-style: normal;
+.space500 {
+  font-family: var(--int-medium) !important;
 }
 
-@font-face {
-  font-family: "space-grotesk";
-  src: url(../fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
-  font-weight: 700;
-  font-style: normal;
+.space600 {
+  font-family: var(--int-semibold) !important;
 }
+
+.space700 {
+  font-family: var(--int-darkBold) !important;
+}
+
+
+/* @font-face {
+  font-family: "DMSans900";
+  src: url("DMSans-Black.woff2") format("woff2"),
+    url("DMSans-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+} */
