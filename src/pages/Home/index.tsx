@@ -122,9 +122,6 @@ export const HomePage = () => {
     <div className="container home-page">
       <Header />
 
-<p className="s">            At our digital marketing agency, we offer a range of services to
-help businesses grow and succeed online. These services include:</p>
-
       <section className="section hero-section">
         <div className="hero-content">
           <div className="left-hero-content">
