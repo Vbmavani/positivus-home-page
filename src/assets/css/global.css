@@ -4,6 +4,13 @@
   --dark: #191a23;
   --white: #ffffff;
   --light-gray: #f3f3f3;
+
+  /* font-family variables classes  */
+  --int-light: 'space300';
+  --int-regular: 'space400';
+  --int-medium: 'space500';
+  --int-semibold: 'space600';
+  --int-darkBold: 'space700';
 }
 
 * {
@@ -14,8 +21,8 @@
 
 body {
   background-color: var(--white);
-  font-family: space-grotesk;
-  font-size: 20px;
+  font-family: var(--int-light);
+  font-size: 14px;
 }
 
 .container {

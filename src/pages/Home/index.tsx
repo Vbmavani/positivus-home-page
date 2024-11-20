@@ -120,6 +120,10 @@ export const HomePage = () => {
   return (
     <div className="container home-page">
       <Header />
+
+<p className="s">            At our digital marketing agency, we offer a range of services to
+help businesses grow and succeed online. These services include:</p>
+
       <section className="section hero-section">
         <div className="hero-content">
           <div className="left-hero-content">
@@ -268,8 +272,12 @@ export const HomePage = () => {
         </div>
       </section>
       <section className="section case-studies">
+        {/* <div className="hiddenClassDesktop">
+        <h2 className="title ">Our Worksssssing</h2>
+        <h2 className="title ">Prosssscess</h2>
+        </div> */}
         <div className="section-intro">
-          <h2 className="title">Our Working Process</h2>
+          <h2 className="title hiddenClassMobile">Our Working Process</h2>
           <p className="description">
             Step-by-Step Guide to Achieving Your Business Goals
           </p>
