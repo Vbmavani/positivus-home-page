@@ -39,6 +39,7 @@ img {
 .section .section-intro {
   display: flex;
   margin-bottom: 80px;
+  align-items: center;
   border-radius: 7px;
 }
 
@@ -48,6 +49,7 @@ img {
   margin-right: 40px;
   padding: 0 7px;
   background-color: var(--green);
+  border-radius: 7px;
 }
 .section .section-intro .description {
   max-width: 580px;
@@ -201,13 +203,21 @@ img {
   background: var(--light-gray);
   display: flex;
   padding: 60px 0;
+  position: relative;
+  overflow-x: hidden;
+}
+.contact-us-img > img {
+  position: absolute;
+  right: -324px;
+  height: 650px;
 }
 
 .contact-us-form {
   display: flex;
-  min-width: 650px;
+  max-width: 650px;
   padding-left: 100px;
   flex-direction: column;
+  width: 100%;
 }
 .contact-us-form .radio-buttons {
   display: flex;
@@ -238,7 +248,7 @@ img {
 }
 .contact-us-form input[type="text"],
 .contact-us-form input[type="email"],
-.contact-us-form input[type="textarea"] {
+.contact-us-form textarea {
   padding: 18px 30px;
   border-radius: 14px;
   border: 1px solid #000;
@@ -251,7 +261,55 @@ img {
   font-size: 18px;
   line-height: 28px;
 }
+.working-process-cards {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 30px;
+}
+.working-process-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
+.working-process-card {
+  border-radius: 45px;
+  padding: 41px 60px;
+  border: 1px solid var(--dark);
+  box-shadow: 0px 5px var(--dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.working-process-card.open {
+  background-color: var(--green);
+}
+
+.working-process-card:not(.expanded) .card-body {
+  opacity: 0;
+}
+.working-process-card .divider {
+  border: 1px solid var(--dark);
+  margin: 25px 0;
+}
+.working-process-content {
+  transition: opacity 4s ease;
+  opacity: 1;
+}
+.working-process-title {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.working-process-title::before {
+  content: attr(data-content);
+  margin-right: 25px;
+  font-size: 60px;
+}
+.working-process-expand-collapse-icon {
+  cursor: pointer;
+}
 @media (max-width: 1440px) {
   .home-page {
     padding: 0 50px;
@@ -268,6 +326,15 @@ img {
   }
 }
 
+@media (max-width: 1200px) {
+  .contact-us-img {
+    display: none;
+  }
+  .contact-us-form {
+    max-width: unset;
+    padding-right: 100px;
+  }
+}
 @media (min-width: 768px) {
   .case-studies-content {
     display: flex;
@@ -287,6 +354,9 @@ img {
 @media (max-width: 768px) {
   .section .section-intro .title {
     margin-right: unset;
+    font-size: 36px;
+    white-space: normal;
+    width: fit-content;
   }
   .hero-content .left-hero-content h1 {
     font-size: 43px;
@@ -346,6 +416,29 @@ img {
     color: var(--white);
     border-radius: 45px;
   }
+
+  .working-process-title {
+    font-size: 18px;
+  }
+  .working-process-title::before {
+    font-size: 30px;
+  }
+  .working-process-expand-collapse-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .working-process-card {
+    padding: 30px;
+  }
+  .working-process-description {
+    font-size: 16px;
+  }
+  .contact-us-content {
+    padding: 40px 0;
+  }
+  .contact-us-form {
+    padding: 0 30px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -353,7 +446,11 @@ img {
     display: block;
   }
   .section {
-    margin: 30px 0;
+    margin: 60px 0;
+  }
+
+  .section .section-intro {
+    margin-bottom: 30px;
   }
   .hero-section .hero-img {
     display: none;

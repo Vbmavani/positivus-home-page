@@ -11,20 +11,14 @@ import SocialMediaMarketingImage from "../../assets/images/services/social-media
 import EmailMarketingImage from "../../assets/images/services/email-marketing.png";
 import LearnMoreIcon from "../../assets/svg/learn-more-icon.svg";
 import ContactUsImage from "../../assets/images/contact-us-bg.png";
+import OutlinedPlusIcon from "../../assets/svg/outlined-plus-icon.svg";
+import OutlinedMinusIcon from "../../assets/svg/outlined-minus-icon.svg";
 
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 
 export const HomePage = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log("searchParam", searchParams.get("page"), searchParams.toString());
-
-  setTimeout(() => {
-    console.log("setting page 2");
-    searchParams.set("page", "2");
-    searchParams.delete("view");
-
-    // setSearchParams({ view: "da" });
-  }, 3000);
+  const [openedWorkingProcessItem, setOpenedWorkingProcessItem] =
+    useState(null);
 
   const handlButtonClick = () => {};
   const servicesCards = [
@@ -53,6 +47,37 @@ export const HomePage = () => {
       image: EmailMarketingImage,
     },
   ];
+  const workingProgressList = [
+    {
+      title: "Consultation",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      title: "Research and Strategy Development",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      title: "Implementation",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      title: "Monitoring and Optimization",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      title: "Reporting and Communication",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+  ];
+
+  const handleWorkingProcessExpandCollapse = (index) => {
+    setOpenedWorkingProcessItem(index);
+  };
   return (
     <div className="container home-page">
       <Header />
@@ -203,6 +228,55 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+      <section className="section case-studies">
+        <div className="section-intro">
+          <h2 className="title">Our Working Process</h2>
+          <p className="description">
+            Step-by-Step Guide to Achieving Your Business Goals
+          </p>
+        </div>
+        <div className="working-process-content">
+          <div className="working-process-cards">
+            {workingProgressList.map((wp, index) => {
+              const isOpen = openedWorkingProcessItem === index;
+              return (
+                <div
+                  className={`working-process-card ${
+                    isOpen ? "open" : "close"
+                  }`}
+                >
+                  <div className="working-process-card-header">
+                    <h4
+                      className="working-process-title"
+                      data-content={`${index + 1 < 10 ? "0" : ""}${index + 1}`}
+                    >
+                      {wp.title}
+                    </h4>
+                    <img
+                      src={isOpen ? OutlinedMinusIcon : OutlinedPlusIcon}
+                      alt="plus-icon"
+                      className="working-process-expand-collapse-icon"
+                      onClick={() =>
+                        handleWorkingProcessExpandCollapse(
+                          isOpen ? null : index
+                        )
+                      }
+                    />
+                  </div>
+                  {openedWorkingProcessItem == index && (
+                    <div className="working-process-content">
+                      <div className="divider"> </div>
+                      <p className="working-process-description">
+                        {wp.description}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
       <section className="section contact-us">
         <div className="section-intro">
           <h2 className="title">Contact Us</h2>
@@ -234,7 +308,7 @@ export const HomePage = () => {
                 </div>
                 <div>
                   <label>Message *</label>
-                  <input type="textarea" required placeholder="Message" />
+                  <textarea rows={10} required placeholder="Message" />
                 </div>
               </div>
               <button type="submit" className="primary-btn">
