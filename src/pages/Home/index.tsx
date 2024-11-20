@@ -11,6 +11,7 @@ import SocialMediaMarketingImage from "../../assets/images/services/social-media
 import EmailMarketingImage from "../../assets/images/services/email-marketing.png";
 import LearnMoreIcon from "../../assets/svg/learn-more-icon.svg";
 import ContactUsImage from "../../assets/images/contact-us-bg.png";
+import LinkedinLogo from "../../assets/images/linkedin-logo.png";
 import OutlinedPlusIcon from "../../assets/svg/outlined-plus-icon.svg";
 import OutlinedMinusIcon from "../../assets/svg/outlined-minus-icon.svg";
 
@@ -72,6 +73,44 @@ export const HomePage = () => {
       title: "Reporting and Communication",
       description:
         "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+  ];
+  const teamList = [
+    {
+      name: "John Smith",
+      designation: "CEO and Founder",
+      summary:
+        "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+    },
+    {
+      name: "John Smith",
+      designation: "CEO and Founder",
+      summary:
+        "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+    },
+    {
+      name: "John Smith",
+      designation: "CEO and Founder",
+      summary:
+        "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+    },
+    {
+      name: "Michael Brown",
+      designation: "Senior SEO Specialist",
+      summary:
+        "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
+    },
+    {
+      name: "John Smith",
+      designation: "CEO and Founder",
+      summary:
+        "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+    },
+    {
+      name: "John Smith",
+      designation: "CEO and Founder",
+      summary:
+        "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
     },
   ];
 
@@ -275,6 +314,57 @@ export const HomePage = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+      <section className="section teams">
+        <div className="section-intro">
+          <h2 className="title">Team</h2>
+          <p className="description">
+            Meet the skilled and experienced team behind our successful digital
+            marketing strategies
+          </p>
+        </div>
+        <div className="team-cards">
+          {teamList.map((person) => {
+            return (
+              <div className="team-card">
+                <div className="team-card-header">
+                  <div className="team-profile-photo">
+                    <div className="profile-image-container">
+                      <img
+                        src={LinkedinLogo}
+                        alt="Profile Picture"
+                        className="profile-image"
+                      />
+                      <div className="background-shape"></div>
+                    </div>
+                  </div>
+                  <div className="team-profile-details">
+                    <div className="team-linkedin-logo-wrapper">
+                      <img
+                        src={LinkedinLogo}
+                        alt="team-linkedin-logo"
+                        className="team-card-linkedin-logo"
+                      />
+                    </div>
+                    <div className="team-profile-info">
+                      <h5 className="team-profile-title">{person.name}</h5>
+                      <p className="team-profile-description">
+                        {person.designation}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="team-card-body">
+                  <div className="divider"></div>
+                  <p className="team-profile-summary">{person.summary}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="team-footer">
+          <button className="primary-btn see-all-team-btn">See all team</button>
         </div>
       </section>
       <section className="section contact-us">
