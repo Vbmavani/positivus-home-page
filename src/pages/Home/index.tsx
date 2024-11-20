@@ -16,6 +16,7 @@ import OutlinedPlusIcon from "../../assets/svg/outlined-plus-icon.svg";
 import OutlinedMinusIcon from "../../assets/svg/outlined-minus-icon.svg";
 
 import { useState } from "react";
+import Footer from "../../components/Footer";
 
 export const HomePage = () => {
   const [openedWorkingProcessItem, setOpenedWorkingProcessItem] =
@@ -411,6 +412,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
