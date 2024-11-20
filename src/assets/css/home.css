@@ -425,8 +425,6 @@ img {
   }
 }
 
-
-
 @media (max-width: 768px) {
   .section .section-intro .title {
     margin-right: unset;
@@ -454,6 +452,9 @@ img {
   }
   .service-card .service-card-header {
     width: 100%;
+  }
+  .services .services-cards .service-card img {
+    width: 130px;
   }
   .services .services-cards .service-card-footer {
     justify-content: space-between;
@@ -555,7 +556,7 @@ img {
     max-width: 120px;
   }
   .free-proposal {
-    padding: 50px;
+    padding: 20px;
   }
   .free-proposal .free-proposal-title {
     font-size: 26px;
